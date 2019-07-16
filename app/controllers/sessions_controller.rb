@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if params[:name]
       session[:name] = params[:name] # sets session[:name] if :name was given
     else
-      redirect_to action: "new"
+      redirect_to action: "new" # could be written as redirect_to(action: 'new') as well
     end
   end
   
