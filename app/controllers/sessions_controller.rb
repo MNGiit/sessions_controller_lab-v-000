@@ -14,5 +14,6 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:name) # leaves session[:name] nil if it was not set
                           # clears session[:name] if it was set
+                          # session.clear works too
   end
 end
