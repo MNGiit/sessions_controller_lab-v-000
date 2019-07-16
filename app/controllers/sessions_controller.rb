@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   #  else
   #    redirect_to action: "new" # could be written as redirect_to(action: 'new') as well
   #  end
-    if session[:name]
+    if !session[:name].nil?
       redirect_to(controller: "application", action: "hello")
     end
     
