@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     # session[:name] = params[:name] # sets session[:name] if :name was given
     if params[:name] && !params[:name].empty?
       session[:name] = params[:name] # sets session[:name] if :name was given
-    elsif !session[:name].nil?
+    elsif session[:name]
       redirect_to "/"
     else
       redirect_to action: "new" # could be written as redirect_to(action: 'new') as well
