@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
   #  else
   #    redirect_to action: "new" # could be written as redirect_to(action: 'new') as well
   #  end
-
     if !params[:name] || params[:name].empty? # go to login
       redirect_to "/login"
     elsif session[:name] # go to root
