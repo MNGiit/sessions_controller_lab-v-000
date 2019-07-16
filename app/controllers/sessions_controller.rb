@@ -9,13 +9,14 @@ class SessionsController < ApplicationController
   #    redirect_to action: "new" # could be written as redirect_to(action: 'new') as well
   #  end
 
-    if !params[:name].empty? || !params[:name]
-      redirect_to(action: "new")
+    if !params[:name] || params[:name].empty?
+      redirect_to '/login'
+    elsif session[:name]
+      redirect_to '/'
     else
       session[:name] = params[:name]
-      redirect_to(controller: "application", action: "hello")
+      redirect_to '/'
     end
-    
     
   end
   
